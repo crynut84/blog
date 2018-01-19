@@ -47,10 +47,10 @@ sudo pip3 install virtualenv
 
 ```bash
 sudo apt-get install git
-git clone https://github.com/house142/anchovy.git
+git clone https://github.com/xxxx/xxxx.git
 ```
 
-clone 받은 anchovy 디렉터리로 이동하여 가상환경을 만든다.
+clone 받은 프로젝트 디렉터리로 이동하여 가상환경을 만든다.
 
 ```bash
 virtualenv myenv
@@ -64,7 +64,7 @@ source myenv/bin/activate
 ```
 가상환경으로 진입하면 쉘의 앞부분에 가상환경이름이 표시된다. 
 ```bash
-(myenv) house142@anchovy-web:~/anchovy$
+(myenv) crynut84@anchovy-web:~/anchovy$
 ```
 
 ## python 패키지 설치
@@ -80,21 +80,21 @@ pip는 `requirements.txt`에 기록된 패키지를 python 가상환경내에 �
 개발한 프로젝트를 운영환경(Production)에서 돌리려면 몇가지 설정을 해야한다. 디버깅을 위해 설정했던 기능을 꺼주어야하고, 프로젝트내에 포함된 스테틱 컨텐츠(css, jaavascript, image 등)를 한데모아 통합하는 일, 그리고 디비의 설정을 실제 디비로 바꿔주는 일등이 있다.
 
 다음의 명령어로 프로젝트의 스테틱 파일을 한데 모을 수 있는데, 저 명령어를 수행하고 나면 settings.py의 STATIC_ROOT 경로로 파일이 모이게 된다.
-왜 스테틱 파일을 모아야하는지는 다음 설명([Django의 스테틱 파일](https://github.com/house142/anchovy/wiki/Django%EC%9D%98-%EC%8A%A4%ED%85%8C%ED%8B%B1-%ED%8C%8C%EC%9D%BC))을 참조한다.
+왜 스테틱 파일을 모아야하는지는 다음 설명([Django static](http://crynut84.github.io/2016/11/14/django-static-file/))을 참조한다.
 ```bash
 python manage.py collectstatic
 ``` 
 
-프로젝트의 `settings.py`를 열어(vi anchovy/settings.py) DB설정을 실서버로 변경한다. (이부분은 향후 자동화하는 방법이 필요하다.)
+프로젝트의 `settings.py`를 열어(vi XXX/settings.py) DB설정을 실서버로 변경한다. (이부분은 향후 자동화하는 방법이 필요하다.)
 
 ```javascript
 DATABASES = {
         'default': {
                 'ENGINE': 'django.db.backends.mysql',
-                'NAME': 'anchovy',
-                'USER': 'anchovy',
-                'PASSWORD': 'house142!234',
-                'HOST': 'anchovy.cloudapp.net',
+                'NAME': '{DB_NAME}',
+                'USER': '{DB_USERNAME}',
+                'PASSWORD': '{DB_PASSWORD}',
+                'HOST': '{DB_HOST_ADDRESS}',
                 'PORT': '3306'
         }
 }
