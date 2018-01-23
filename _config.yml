@@ -88,3 +88,11 @@ deploy:
   type: git
   repo: https://github.com/crynut84/crynut84.github.io.git
   branch: master
+
+
+# robots.txt
+# plugins:
+# - hexo-generator-robotstxt
+
+# robotstxt:
+#   sitemap: /sitemap.xml

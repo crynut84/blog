@@ -26,3 +26,8 @@ sudo update-ca-certificate
 ```bash
 echo insecure >> ~/.curlrc
 ```
+
+### npm
+```bash
+npm set strict-ssl false
+```
